@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link href="../../Styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Styles/styles.mini.css" rel="stylesheet" />
+    <script src="../../Scripts/jquery.validate.min.js"></script>
+    <script src="../../Scripts/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    @model FreDX.Models.RegisterModel
+    <div class="login-dark">
+        <form method="post" action="/Account/Register">
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><img src="../../img/lock.png" /></div>
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="form-group"><input class="form-control" type="text" name="Name" placeholder="Имя учетной записи"></div>
+            <div class="form-group"><input class="form-control" type="password" name="Password" placeholder="Пароль"></div>
+            <div class="form-group"><input class="form-control" type="password" name="ConfirmPassword" placeholder="Повтор пароля"></div>
+            <div class="form-group"><input class="form-control" type="text" name="Post" placeholder="Должность"></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Зарегистрировать</button></div>
+            <a href="/Account/Login" class="forgot">Воити</a>
+        </form>
+    </div>
+
+
+</body>
+</html>

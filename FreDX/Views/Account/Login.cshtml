@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link href="../../Styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Styles/styles.mini.css" rel="stylesheet" />
+    <script src="../../Scripts/jquery.validate.min.js"></script>
+    <script src="../../Scripts/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    @model FreDX.Models.LoginModel
+    <div class="login-dark">
+        <form method="post" action="/Account/Login">
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><img src="../../img/lock.png" /></div>
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+            <div class="form-group"><input class="form-control" type="text" name="Name" placeholder="Имя учетной записи"></div>
+            <div class="form-group"><input class="form-control" type="password" name="Password" placeholder="Пароль"></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Войти</button></div>
+            <a href="/Account/Register" class="forgot">Регистрация</a>
+            <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
+            </form></div>
+        
+    
+
+</body>
+
+</html>

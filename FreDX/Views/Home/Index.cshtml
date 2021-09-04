@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "~/Views/nav/Nav-up.cshtml";
+}
+@model List<FreDX.Models.helpers.News>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Новости проекта</title>
+    <link href="~/Styles/styles.min.css" rel="stylesheet" />
+</head>
+<body class="news">
+    <div class="ind-ex">
+        <div>
+            <label class="news-label"> Новости </label>
+            <table class="table-news">
+                @{foreach (var m in Model)
+                    {
+                        <tr class="tr-news">
+                            <td class="news-line">@m.labelname</td>
+                            <td></td>
+                            <td>@m.textnews</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>

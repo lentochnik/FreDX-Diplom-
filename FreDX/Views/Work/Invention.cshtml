@@ -1,0 +1,58 @@
+﻿
+@{
+    Layout = "~/Views/nav/Nav-up.cshtml";
+}
+@model FreDX.Models.Inventionbiblio
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body class="main">
+
+    <div id="Invention" class="applic-form">
+        <table class="Nav-Table">
+            <tr>
+                <td class="td-nav">@Html.ActionLink("Информация о поступлении", "Enter", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                <td class="td-nav">@Html.ActionLink("Изобретение", "Invention", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                <td class="td-nav">@Html.ActionLink("Заявители", "Applicants", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                <td class="td-nav">@Html.ActionLink("Изобретатели", "Inventors", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                <td class="td-nav">@Html.ActionLink("Агенты", "Agents", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                <td class="td-nav">@Html.ActionLink("Приоритетные документы", "Priority", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                <td class="td-nav">@Html.ActionLink("Заявка", "Application", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+            </tr>
+        </table>
+        <form method="post" action="/Work/Invention?num=@ViewBag.Id">
+            @Html.AntiForgeryToken()
+            <table class="Table-Invention">
+                @Html.HiddenFor(m => m.Id)
+                <tr>
+                    <td>
+                        <label for="Invname" class="Invention-Name">Название изобретения</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.TextAreaFor(model => model.Invname, new { htmlAttributes = new { @class = "form-control", @id = "Invname" } })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Сохранить" class="create-field-sub-btn">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+</body>
+</html>
+

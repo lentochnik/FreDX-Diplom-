@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@ViewBag.Id</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="~/Styles/aos.css" rel="stylesheet" />
+    <link href="~/Styles/animate.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Styles/styles.min.css" />
+
+</head>
+
+
+<body>
+    <div class="header">
+        <a class="active" href="~/Views/Home/Index.cshtml">Новости проекта</a>
+        <a href="~/Views/Work/CreateAppb.cshtml">Создать заявку</a>
+        <a href="/Search">Поиск</a>
+        <a href="Helpers">Словари</a>
+        <div class="header-right">
+            <a href="~/Account/Login">
+                Выход @{
+                    FreDX.Controllers.AccountController ac = new FreDX.Controllers.AccountController();
+                    ac.Logoff();
+
+                }
+            </a>
+        </div>
+    </div>
+        <div class="main1">
+            @RenderBody()
+        </div>
+
+
+
+    <div class="foter-lay">Nixe @DateTime.Now.Year </div>
+</body>
+
+</html>

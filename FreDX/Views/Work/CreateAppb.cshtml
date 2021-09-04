@@ -1,0 +1,68 @@
+﻿@{
+    Layout = "~/Views/nav/Nav-up.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link rel="stylesheet" href="~/Styles/styles.min.css" />
+</head>
+<body>
+    @model FreDX.Models.Inventionbiblio
+            <form method="post" action="/Work/CreateAppb" class="create-field-sub">
+                <ul>
+                    <li>
+                        <label><i class="create-field-sub-name"></i>Создание задания</label>
+                    </li>
+                    <li class="li-create-field-sub-dep">
+
+                        <a2 class="create-field-dep">
+                            <label for="Department"><i class="create-field-sub-dep"></i>Страна</label>
+                            @Html.TextBoxFor(model => model.Department, new { @class = "create-field-sub-dep-in", @id = "Department", @maxlength = 2 })
+                        </a2>
+
+                    </li>
+                    <li class="li-create-field-Year">
+
+                        <a3 class="create-field-Year">
+                            <label for="Year"><i class="create-field-sub-year"></i>Год</label>
+                            <i2 id="Years">
+                                @{
+                                    List<SelectListItem> list = new List<SelectListItem>();
+                                    for (int i = 0; i < 10;)
+                                    {
+                                        list.Add(new SelectListItem() { Text = (DateTime.Now.Year - i).ToString() });
+                                        i++;
+                                    }
+                                }
+
+                                @Html.DropDownListFor(model => model.Year, list, new { @class = "create-field-sub-year-in", @id = "Year" })
+                            </i2>
+                        </a3>
+
+                    </li>
+                    <li class="li-create-field-appnum">
+                        <a4 class="create-field-AppNum">
+                            <label for="AppNum"><i class="create-field-sub-appnum"></i>Номер заявки</label>
+                            @Html.TextBoxFor(model => model.Numerator, new { @class = "create-field-appnum-in", @id = "Id", @maxlength = 6 } )
+                            <script>
+                                document.getElementById("Id").onkeydown = function (e) {
+                                    return ((/^[0-9]$/.test(e.key)) || e.key == "Backspace" || e.key == "Delete" || e.key == "Enter");
+                                };
+                                document.getElementById("Department").onkeydown = function (e) {
+                                    return ((/^[A-Z]$/.test(e.key)) || e.key == "Backspace" || e.key == "Delete" || e.key == "Enter");
+                                };
+                            </script>
+                        </a4>
+                    </li>
+                    <li class="li-create-field-sub-sumb">
+                        <input type="submit" value="Создать" class="create-field-sub-btn">
+                    </li>
+                </ul>
+
+            </form>
+</body>
+</html>

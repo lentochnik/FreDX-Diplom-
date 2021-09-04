@@ -1,0 +1,59 @@
+﻿@{
+    Layout = "~/Views/nav/Nav-up.cshtml";
+}
+@model  List<FreDX.Models.Invent>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body class="main">
+    <div id="Inventors" class="applic-form">
+        <table class="Nav-Table">
+            <tr>
+                <td class="td-nav">@Html.ActionLink("Информация о поступлении", "Enter", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                <td class="td-nav">@Html.ActionLink("Изобретение", "Invention", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                <td class="td-nav">@Html.ActionLink("Заявители", "Applicants", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                <td class="td-nav">@Html.ActionLink("Изобретатели", "Inventors", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                <td class="td-nav">@Html.ActionLink("Агенты", "Agents", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                <td class="td-nav">@Html.ActionLink("Приоритетные документы", "Priority", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                <td class="td-nav">@Html.ActionLink("Заявка", "Application", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+            </tr>
+        </table>
+        <div>
+            <table id="Inven" border="1" class="Table-list-app">
+                <tr class="Table-list-app">
+                    <td class="Table-list-app-col">№</td>
+                    <td class="Table-list-app-col">Имя изобретателя</td>
+                    <td class="Table-list-app-col">Страна регистрации</td>
+                    <td class="Table-list-app-col">Адрес</td>
+                    <td class="Table-list-app-col"></td>
+                    <td class="Table-list-app-col"></td>
+                </tr>
+                @{ int i = 1; }
+                @{foreach (var inventor in Model)
+                    {
+                        <tr id="Inven" class="Table-list-app">
+                            <td  class="Table-list-app-col">@i</td>
+                            <td  class="Table-list-app-col"><input type="text" id="Inventor" value="@inventor.Inventor" readonly="readonly"  class="Tex-tabl-List"/></td>
+                            <td  class="Table-list-app-col">
+                                @Html.DropDownList("list", ViewBag.ListCountry as SelectList, "---", new { @class = "Tex-tabl-List", @id = "Country" + @i, @readonly = "readonly" })
+                                <script>
+                             this.document.getElementById("Country"+@i).selectedIndex = "@inventor.Country";
+                                </script>
+                            </td>
+                            <td  class="Table-list-app-col"><input type="text" id="Adress" value="@inventor.Adress" readonly="readonly"  class="Tex-tabl-List" /></td>
+                            <td  class="Table-list-app-col">@Html.ActionLink("Удалить", "DelIn", new { num = @inventor.Numerator, Id = @inventor.Id }, new { @class = "btn-dc-table" })</td>
+                            <td  class="Table-list-app-col">@Html.ActionLink("Изменить", "EditIn", new { num = @inventor.Numerator, Id = @inventor.Id }, new { @class = "btn-dc-table" })</td>
+
+                        </tr>
+                        i++;
+                    }
+                }
+            </table>
+        </div>
+        @Html.ActionLink("Добавить", "AddInv", new { num = ViewBag.Id }, new { @class = "butn-form-table" })
+    </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+﻿@{
+    Layout = "~/Views/nav/Nav-up.cshtml";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Id</title>
+    <link rel="stylesheet" href="~/Styles/styles.min.css" />
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/inputmask/inputmask.js"></script>
+    <script src="~/Scripts/inputmask/bindings/inputmask.binding.js"></script>
+
+</head>
+
+<body class="main">
+    @model FreDX.Models.Enterbiblio
+    <div class="applic-form">
+        <table class="Nav-Table">
+            <tr>
+                <td class="td-nav">@Html.ActionLink("Информация о поступлении", "Enter", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                <td class="td-nav">@Html.ActionLink("Изобретение", "Invention", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                <td class="td-nav">@Html.ActionLink("Заявители", "Applicants", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                <td class="td-nav">@Html.ActionLink("Изобретатели", "Inventors", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                <td class="td-nav">@Html.ActionLink("Агенты", "Agents", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                <td class="td-nav">@Html.ActionLink("Приоритетные документы", "Priority", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                <td class="td-nav">@Html.ActionLink("Заявка", "Application", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+
+            </tr>
+        </table>
+            <form method="post" action="/Work/Enter?num=@ViewBag.Id" id="DataEnter" class="applic-form-Enter">
+                <h3>Информация о поступлении</h3>
+                @Html.AntiForgeryToken()
+                <ul class="ul-enter">
+                    <li class="li-enter">
+                        @Html.HiddenFor(model => model.Id)
+                        <label for="Numerator" class="label-enter">Номер заявки</label>
+                        <input type="text" id="Numerator" class="Editor-form-NU" value="@ViewBag.Id" readonly="readonly" />
+                    </li>
+                    <li class="li-enter">
+                        <label for="DataInv" class="label-enter">Дата подачи</label>
+                        @Html.EditorFor(model => model.DataInv, new { htmlAttributes = new { @class = "Editor-form-DI", @id = "DataInv" } })
+                        <script>
+                            var selector = document.getElementById("DataInv");
+                            var im = new Inputmask("99.99.9999");
+                            im.mask("DataInv");
+                        </script>
+                    </li>
+                    <li class="li-enter">
+                        <label for="LangIn" class="label-enter">Язык подачи</label>
+                        @Html.DropDownListFor(m => Model.LangIn, ViewBag.LiastLang as SelectList, new { @class = "Editor-form-LI", @id = "LangIn" })
+                    </li>
+                    <li class="li-enter">
+                        <label for="LangTr" class="label-enter">Язык перевода</label>
+                        @Html.DropDownListFor(m => Model.LangTr, ViewBag.LiastLang as SelectList, new { @class = "Editor-form-LT", @id = "LangTr" })
+                    </li>
+                    <li class="li-enter">
+                        <label for="AgNum" class="label-enter">Номер дела агента</label>
+                        @Html.EditorFor(model => model.AgNum, new { htmlAttributes = new { @class = "Editor-form-AG", @id = "AgNum" } })
+                    </li>
+                    <li class="li-enter" >
+                        <label for="DateEn" class="label-enter">Дата поступления</label>
+                        @Html.EditorFor(model => model.DateEn, new { htmlAttributes = new { @class = "Editor-form-DE", @id = "DateEn" } })
+                        <script>
+                            var selector = document.getElementById("DateEn");
+                            var im = new Inputmask("99.99.9999");
+                            im.mask("DateEn");
+                        </script>
+                    </li>
+                    <li class="li-enter">
+                        <input type="submit" value="Сохранить" class="create-field-sub-btn">
+                    </li>
+                </ul>
+                <script src="~/Scripts/Tabs.js"></script>
+                @{
+                    @Scripts.Render("~/bundles/inputmask")
+                }
+            </form>
+        </div>
+</body>
+</html>

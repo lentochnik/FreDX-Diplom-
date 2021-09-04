@@ -1,0 +1,64 @@
+﻿@{
+    Layout = "~/Views/nav/Nav-up.cshtml";
+}
+@model List<FreDX.Models.Agent>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body class="main">
+    <div>
+        <div id="Agents" class="applic-form">
+            <table class="Nav-Table">
+                <tr>
+                    <td class="td-nav">@Html.ActionLink("Информация о поступлении", "Enter", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                    <td class="td-nav">@Html.ActionLink("Изобретение", "Invention", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                    <td class="td-nav">@Html.ActionLink("Заявители", "Applicants", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                    <td class="td-nav">@Html.ActionLink("Изобретатели", "Inventors", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                    <td class="td-nav">@Html.ActionLink("Агенты", "Agents", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                    <td class="td-nav">@Html.ActionLink("Приоритетные документы", "Priority", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                    <td class="td-nav">@Html.ActionLink("Заявка", "Application", new { num = ViewBag.Id }, new { @class = "Link-Nav-But" })</td>
+                </tr>
+            </table>
+            <div>
+                <table id="Agent" border="1" class="Table-list-app">
+                    <tr class="Table-list-app">
+                        <td class="Table-list-app-col">№</td>
+                        <td class="Table-list-app-col">Номер агента</td>
+                        <td class="Table-list-app-col">Имя агента</td>
+                        <td class="Table-list-app-col">Страна проживания</td>
+                        <td class="Table-list-app-col">Город</td>
+                        <td class="Table-list-app-col">Адрес</td>
+                        <td class="Table-list-app-col"></td>
+                        <td class="Table-list-app-col"></td>
+                    </tr>
+                    @{ int i = 1;
+                        string a = null;}
+                    @{foreach (var ag in Model)
+                        {
+                            <tr class="Table-list-app">
+                                <td class="Table-list-app-col">1</td>
+                                <td class="Table-list-app-col"><input type="text" id="AgentNumber" value="@ag.AgentNumber" readonly="readonly" class="Tex-tabl-List"/></td>
+                                <td class="Table-list-app-col"><input type="text" id="Name" readonly="readonly" value="@ag.Name"class="Tex-tabl-List" /></td>
+                                <td class="Table-list-app-col">
+                                    @Html.DropDownList("list", ViewBag.ListCountry as SelectList, "---", new { @class = "Tex-tabl-List", @id = "Country" + i })
+                                    <script>document.getElementById("Country"+@i).selectedIndex = "@ag.Status";</script>
+                                </td>
+                                <td class="Table-list-app-col"><input type="text" id="City" readonly="readonly" value="@ag.City" class="Tex-tabl-List"/></td>
+                                <td class="Table-list-app-col"><input type="text" id="Adress" readonly="readonly" value="@ag.Adress"class="Tex-tabl-List"/></td>
+                                <td class="Table-list-app-col">@Html.ActionLink("Удалить", "DelAg", new { num = ag.Numerator, Id = ag.Id }, new { @class = "btn-dc-table" })</td>
+                                <td class="Table-list-app-col">@Html.ActionLink("Изменить", "EditAg", new { num = ag.Numerator, Id = ag.Id }, new { @class = "btn-dc-table" })</td>
+                            </tr>
+                            i++;
+                            a = ag.Numerator;
+                        }
+                    }
+                </table>
+            </div>
+        </div>
+        @Html.ActionLink("Добавить", "AddAg", new { num = ViewBag.Id }, new { @class = "butn-form-table" })
+    </div>
+</body>
+</html>

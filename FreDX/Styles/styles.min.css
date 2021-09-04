@@ -1,0 +1,378 @@
+
+
+
+.sidenav {
+    height: 100rem;
+    width: 160px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    font-family: "Times New Roman", Arial;
+    margin-top: 47px;
+}
+
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+
+.main1 {
+
+}
+.main {
+    margin-top: 4rem;
+    font-size: 28px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 800px;
+    border: 1.5px solid #000;
+}
+
+.sidenav a {
+    font-size: 14px;
+}
+
+
+.foter-lay {
+    margin-right: 0px;
+    font-size: 10px;
+    font-family: 'Times New Roman';
+    margin-bottom: 0px;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+}
+
+.ind-ex {
+    font-family: 'Times New Roman';
+    font-size: 1.75rem;
+}
+
+.header {
+    background-color: #333;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 0px;
+    position: fixed;
+    padding-left: 0px;
+    padding-right: 0px;
+    top: 0;
+    left: 0
+}
+
+.header a {
+     float: left;
+     color: #f2f2f2;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+     font-size: 17px;
+}
+
+ .header a:hover {
+     background-color: #ddd;
+     color: black;
+}
+
+.header a:active {
+    background-color: #4CAF50;
+    color: white;
+}
+.header-right {
+    right: 10px;
+    float: right;
+}
+.btn-logout {
+    border: none; /* Remove borders */
+    padding: 24px 24px; /* Some padding */
+    cursor: pointer; /* Mouse pointer on hover */
+    background-image: url("../img/logout.png");
+    background-repeat: no-repeat; /* make the background image appear only once */
+    background-position: 0px 0px; /* equivalent to 'top left' */
+    border: none; /* assuming we don't want any borders */
+    vertical-align: auto; /* align the text vertically centered */
+    text-decoration: none; /* убирать подчёркивание у ссылок */
+    user-select: none; /* убирать выделение текста */
+}
+
+.create-field-sub {
+    position: relative;
+}
+.create-field-sub {
+    border: 1.5px solid #000;
+    width: 500px;
+    height: 500px;
+    position: fixed;
+    margin-left: 40%;
+    margin-top: 10%;
+    margin-right: 40%;
+    margin-bottom: 20%;
+    background: white;
+    box-shadow: 0rem 0rem 0.5rem;
+}
+    .create-field-sub ul {
+        list-style-type: none;
+        list-style-position: outside;
+    }
+    a1 .create-field-dep {
+    position: sticky;
+    font: 26px Times New Roman;
+    top: 30%;
+    border: solid;
+    right: 40%;
+}
+ .create-field-sub li{
+    padding: 12px;
+    position: relative;
+}
+
+.li-create-field-sub-dep {
+    margin-top: 50px;
+    margin-left: 25px;
+}
+.li-create-field-Year {
+    margin-left: 25px;
+}
+
+.li-create-field-appnum {
+    margin-left: 25px;
+}
+
+.li-create-field-sub-sumb {
+    margin-top: 100px;
+}
+
+
+i.create-field-sub-name {
+    margin-left: 100px;
+}
+
+.create-field-sub-dep-in {
+    width: 60px;
+    height: 25px;
+    font-size: 28px;
+    margin-left: 150px;
+    border: 1px solid;
+    text-align: center;
+}
+
+.create-field-sub-year-in {
+    margin-left: 193px;
+    width: 64px;
+    height: 34px;
+    font-size: 18px;
+    border: 1px solid;
+    text-align: center;
+}
+.create-field-appnum-in {
+    width: 100px;
+    margin-left: 71px;
+    height: 25px;
+    font-size: 28px;
+    text-align: center;
+    border: 1px solid;
+}
+.create-field-sub-btn {
+    margin-left: 45%;
+    width: 200px;
+    height: 50px;
+    background-color: #b3b3b3;
+    border-color: #6f6f6f;
+    border-style: outset;
+}
+/*----------------------------------------------------------------------------------------------------------*/
+
+.Nav-Table {
+    font-size: 18px;
+    width: 100%;
+    position: sticky;
+}
+
+.td-nav {
+    background-color: #333333;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 22px;
+    width: 100%;
+}
+    .td-nav:hover {
+        background-color: #ddd;
+        color: #111;
+    }
+
+.Link-Nav-But {
+    text-decoration: none;
+    color: white;
+
+}
+
+   .Link-Nav-But:hover {
+        background-color: #ddd;
+        color: #111;
+    }
+
+.applic-form{
+    width: 100%;
+}
+
+.Table-list-app {
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    border: 1px;
+    border-color: #000000;
+    padding: 1px 1px 1px 1px;
+    border:groove;
+}
+
+.Tex-tabl-List{
+    width: 100%;
+    border: none;
+    text-align:center;
+}
+
+.Table-list-app-col {
+    border: groove;
+}
+
+.butn-form-table {
+    text-decoration: none;
+    text-decoration-color: white;
+    background-color: #333333;
+    color: #ffffff;
+    border: double;
+    margin-left: 50%;
+    margin-right: 41%;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+    .butn-form-table:hover {
+        background-color: #ddd;
+        color: #111;
+    }
+
+.btn-dc-table{
+    text-decoration: none;
+    color: #000
+}
+
+.btn-dc-table:hover {
+    text-decoration: none;
+    color: #6f6f6f
+}
+.applic-form-Enter {
+    margin-left: 25%;
+    margin-top: 5%;
+    margin-right: 20%;
+}
+
+ul.ul-enter {
+    list-style: none;
+    font-size: 25px;
+    padding: 3px;
+}
+
+li.li-enter {
+    padding: 20px;
+}
+
+label.label-Enter{
+
+}
+
+.Editor-form-LI {
+    margin-left: 159px;
+    width: 253px;
+    position: fixed;
+    height: 28px;
+    font-size: 20px;
+}
+.Editor-form-LT {
+    margin-left: 139px;
+    width: 252px;
+    position: fixed;
+    height: 28px;
+    font-size: 20px;
+}
+.Editor-form-AG {
+    margin-left: 99px;
+    width: 249px;
+    position: fixed;
+    height: 28px;
+    font-size: 20px;
+}
+.Editor-form-DE {
+    margin-left: 104px;
+    width: 250px;
+    position: fixed;
+    height: 28px;
+    font-size: 20px;
+}
+.Editor-form-DI {
+    margin-left: 165px;
+    width: 249px;
+    position: fixed;
+    height: 28px;
+    font-size: 20px;
+}
+.Editor-form-NU {
+    margin-left: 150px;
+    width: 250px;
+    position: fixed;
+    height: 28px;
+    font-size: 20px;
+}
+
+.Table-Invention {
+    width: 100%;
+}
+
+.Invention-Name {
+    margin-left: 43%;
+}
+
+textarea#Invname {
+    width: 500px;
+    height: 200px;
+    resize: none;
+    margin-left: 35%;
+    font-size: 20px;
+    border: solid;
+}
+.news
+{
+margin-top: 10%;
+margin-left: 10%;
+margin-right: 10%;
+}
+.news-label {
+    width: 100%;
+    border-bottom: groove;
+    padding-right: 1000px;
+}
+
+.table-news {
+    margin-top: 25px;
+    border: double;
+    width: 1100px;
+    text-align: left;
+}
+.news-line{
+    width: 100px;
+}
+.tr-news {
+    border-bottom: groove;
+}
+    /*  ------------------------------------------------------------------------*/
